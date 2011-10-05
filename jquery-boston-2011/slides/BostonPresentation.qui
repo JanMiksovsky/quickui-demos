@@ -61,7 +61,7 @@
         </SideBySideSlide>
         <CodeSlide sourceFile="flickr/FlickrMonthNavigator.qui"/>
         <CodeSlide sourceFile="flickr/ThaiFlickrMonthNavigator.qui"/>
-        <DeferredSlide controlClass="FlickrYear" style="overflow: auto;"/>
+        <DeferredSlide controlClass="FlickrYear"/>
             
         <TextSlide>
             <CodeColorizer sourceFile="slides/BostonPresentation.qui"/>
