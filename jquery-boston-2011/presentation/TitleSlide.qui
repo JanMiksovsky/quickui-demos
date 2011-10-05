@@ -1,0 +1,13 @@
+<Control name="TitleSlide">
+
+<prototype>
+    <TextSlide/>
+</prototype>
+
+<style>
+#TextSlide_title {
+    font-size: 64px;
+}
+</style>
+
+</Control>

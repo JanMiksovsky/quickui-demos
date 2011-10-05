@@ -1,0 +1,22 @@
+<Control name="LocalizedCalendars">
+
+<content>
+    <SlidingTabs id="calendars">
+        <MonthNavigator culture="en"/>
+        <MonthNavigator culture="fr"/>
+        <MonthNavigator culture="ar"/>
+        <MonthNavigator culture="ja"/>
+        <MonthNavigator culture="th"/>
+    </SlidingTabs>
+</content>
+
+<style>
+#calendars {
+    display: inline-block;
+}
+#calendars #tabButtons {
+    margin-top: 10px;
+}
+</style>
+
+</Control>

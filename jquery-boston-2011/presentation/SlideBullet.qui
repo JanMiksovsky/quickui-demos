@@ -1,0 +1,13 @@
+<Control name="SlideBullet" tag="li">
+
+<content>
+    <div id="SlideBullet_content"/>
+</content>
+
+<script>
+SlideBullet.prototype.extend({
+    content: Control.chain( "$SlideBullet_content", "content" )
+});
+</script>
+
+</Control>

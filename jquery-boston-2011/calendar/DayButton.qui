@@ -1,0 +1,58 @@
+<Control name="DayButton">
+
+<prototype>
+    <CalendarDay>
+        <ButtonBase id="button" generic="false"/>
+    </CalendarDay>
+</prototype>
+
+<style>
+{
+    padding: 0;
+}
+#button {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/* Generic appearance */
+.DayButton.generic {
+    padding: 0;
+}
+.DayButton.generic #button {
+    border: 1px solid transparent;
+    padding: 4px;
+}
+.DayButton.generic #button:hover {
+    border-color: lightgray;
+}
+.DayButton.generic.outsideRange #button {
+    color: #aaa;
+}
+.DayButton.generic.selected #button {
+    background-color: #ddd;
+}
+.DayButton.generic.today.insideRange #button {
+    color: darkred;
+    font-weight: bold;
+}
+</style>
+
+<script>
+DayButton.prototype.extend({
+    
+    content: Control.chain( "$button", "content" ),
+    
+    initialize: function() {
+        DayButton.superclass.prototype.initialize.call( this );
+        this.genericIfClassIs( DayButton );
+    }
+});
+</script>
+
+</Control>

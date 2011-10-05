@@ -1,0 +1,96 @@
+<!-- Shows a calendar for a full year -->
+
+<Control name="CalendarYear">
+
+<content>
+    <div id="yearTable">
+        <div>
+            <div/>
+            <div id="year"/>
+            <div/>
+        </div>
+        <div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+        </div>
+        <div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+        </div>
+        <div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+        </div>
+        <div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+            <div><CalendarMonthWithHeadings/></div>
+        </div>
+    </div>
+</content>
+
+<style>
+#yearTable {
+    display: table;
+}
+#yearTable > * {
+    display: table-row;
+}
+#yearTable > * > * {
+    display: table-cell;
+}
+
+/* Generic appearance */
+.CalendarYear.generic {
+    font-family: sans-serif;
+}
+.CalendarYear.generic #year {
+    font-size: larger;
+    font-weight: bold;
+    padding: .5em;
+    text-align: center;
+}
+.CalendarYear.generic #yearTable > * > * {
+    padding: .5em;
+}
+.CalendarYear.generic .CalendarDay.selected {
+    background: none;
+}
+.CalendarYear.generic .CalendarDay.outsideMonth {
+    visibility: hidden;
+}
+</style>
+
+<script>
+CalendarYear.prototype.extend({
+    
+    dayClass: Control.chain( "$months", "dayClass" ),
+    dayNameFormat: Control.chain( "$months", "dayNameFormat" ),
+    showSelectedDate: Control.chain( "$months", "showSelectedDate" ),
+    showYear: Control.chain( "$year", "visibility" ),
+    $months: Control.chain( "find/.CalendarMonthWithHeadings", "cast" ),
+    
+    initialize: function() {
+        this.genericIfClassIs( CalendarYear );
+        if ( this.date() === undefined) {
+            this.date( CalendarDay.today() );
+        }
+    },
+    
+    date: Control.property.date( function( date ) {
+        var year = date.getFullYear();
+        this.$year().text( year );
+        var $months = this.$months();
+        for ( var i = 0; i < 12; i++ ) {
+            var firstOfMonth = new Date( year, i, 1);
+            var $month = $months.eq(i);
+            $month.date( firstOfMonth );
+        }
+    })
+});
+</script>
+
+</Control>

@@ -1,0 +1,40 @@
+<Control name="Slide">
+
+<style>
+{
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+/* Generic appearance */
+.Slide.generic {
+    padding: 2em;
+}
+</style>
+
+<script>
+Slide.prototype.extend({
+    
+    initialize: function() {
+        this.genericIfClassIs( Slide );
+    },
+    
+    title: function( title ) {
+        var $page = this.page();
+        if ( !$page ) {
+            return this;
+        } else if ( title === undefined ) {
+            return $page.title();
+        } else {
+            $page.title( title );
+            return this;
+        }
+    }
+});
+</script>
+
+</Control>

@@ -1,0 +1,130 @@
+<Control name="BostonPresentation">
+
+<prototype>
+    <Presentation generic="true">
+
+        <TitleSlide title="QuickUI">
+            <p>Object-oriented UI markup for jQuery</p>
+            <p>
+                Jan Miksovsky<br/>
+                jan@quickui.org<br/>
+                Twitter @JanMiksovsky<br/>
+            </p>
+            <p style="font-size: smaller;">
+                Source for this talk<br/>
+                http://github.com/JanMiksovsky/quickui-demos/jquery-boston-2011
+            </p>
+        </TitleSlide>
+        
+        <SideBySideSlide>
+            <left><CodeColorizer sourceFile="static/index.html"/></left>
+            <right><iframe src="static/index.html" class="pageSample"/></right>
+        </SideBySideSlide>
+        <SideBySideSlide>
+            <left><CodeColorizer sourceFile="conventional/conventional.js"/></left>
+            <right><iframe src="static/index.html" class="pageSample"/></right>
+        </SideBySideSlide>
+
+        <Slide>
+            <DateComboBox/>
+        </Slide>
+        <Slide>
+            <img src="resources/DateComboBox Hierarchy.png"/>
+        </Slide>
+        <Slide style="overflow-y: auto;">
+            <CalendarParts/>
+        </Slide>
+        <CodeSlide sourceFile="calendar/CalendarMonthWithHeadings.qui"/>
+        <CodeSlide sourceFile="calendar/MonthNavigator.qui"/>
+        <CodeSlide sourceFile="calendar/DateComboBox.qui"/>
+
+        <CodeSlide sourceFile="examples/ThreeMonthCalendar.qui"/>
+        <CodeSlide sourceFile="calendar/CalendarYear.qui"/>
+        <CodeSlide sourceFile="calendar/YearNavigator.qui"/>
+
+        <CodeSlide sourceFile="calendar/MonthName.qui"/>
+        <CodeSlide sourceFile="examples/LocalizedCalendars.qui"/>
+
+        <CodeSlide sourceFile="custom/KanjiCalendarMonth.qui"/>
+        <SideBySideSlide>
+            <left><CodeColorizer sourceFile="custom/KanjiCalendarDay.qui"/></left>
+            <right><KanjiCalendarDay style="display: inline-block;"/></right>
+        </SideBySideSlide>
+        <CodeSlide sourceFile="examples/SimpleComboBox.qui"/>
+
+        <TextSlide title="Flickr calendar">
+            <a href="http://www.flickr.com/explore/interesting/2011/10/" target="_blank">Flickr Interestingness</a>
+        </TextSlide>
+        <SideBySideSlide>
+            <left><CodeColorizer sourceFile="flickr/FlickrDay.qui"/></left>
+            <right><FlickrDay autoLoad="true"/></right>
+        </SideBySideSlide>
+        <CodeSlide sourceFile="flickr/FlickrMonthNavigator.qui"/>
+        <CodeSlide sourceFile="flickr/ThaiFlickrMonthNavigator.qui"/>
+        <DeferredSlide controlClass="FlickrYear" style="overflow: auto;"/>
+            
+        <TextSlide>
+            <CodeColorizer sourceFile="slides/BostonPresentation.qui"/>
+        </TextSlide>
+
+        <TextSlide title="Markup + classes = good UI faster">
+            <p>
+                Breakdown of UI controls in a reasonably complex web app:
+            </p>
+            <ul>
+                <SlideBullet>30% general purpose controls</SlideBullet>
+                <SlideBullet>10% control subclasses for look and feel</SlideBullet>
+                <SlideBullet>60% app-specific controls</SlideBullet>
+            </ul>
+        </TextSlide>
+        
+        <TextSlide title="Backlog">
+            <ul>
+                <SlideBullet>Port from C# to… Python? JavaScript?</SlideBullet>
+                <SlideBullet>Packaging and dependency management</SlideBullet>
+                <SlideBullet>Performance</SlideBullet>
+                <SlideBullet>Online library of great, extensible controls</SlideBullet>
+            </ul>
+        </TextSlide>
+        
+        <TextSlide title="Thanks">
+            <p>
+                http://quickui.org
+            </p>
+            <p>
+                Jan Miksovsky<br/>
+                jan@quickui.org<br/>
+                Twitter @JanMiksovsky<br/>
+                blog miksovsky.blogs.com/flowstate
+            </p>
+            <p style="font-size: smaller;">
+                Source for this talk<br/>
+                http://github.com/JanMiksovsky/quickui-demos/jquery-boston-2011
+            </p>
+        </TextSlide>
+
+    </Presentation>
+</prototype>
+
+<style>
+.pageSample {
+    border: medium none;
+    height: 100%;
+    width: 100%;
+}
+
+#TextSlide_title {
+    color: #928274; /* #391c01; */
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.SlideBullet {
+    color: #928274; /* #3188be; */
+}
+.SlideBullet #SlideBullet_content {
+    color: black;
+}
+</style>
+
+</Control>

@@ -1,0 +1,22 @@
+<Control name="SideBySideSlide">
+    
+<prototype>
+    <Slide>
+        <SideBySide id="sideBySide"/>
+    </Slide>
+</prototype>
+
+<style>
+#sideBySide {
+    height: 100%;
+    width: 100%;
+}
+</style>
+
+<script>
+SideBySideSlide.prototype.extend({
+    left: Control.chain( "$sideBySide", "left" ),
+    right: Control.chain( "$sideBySide", "right" )
+});
+</script>
+</Control>

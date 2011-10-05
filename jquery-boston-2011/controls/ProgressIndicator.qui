@@ -1,0 +1,23 @@
+<!-- A spinning progress indicator -->
+
+<Control name="ProgressIndicator">
+
+<content>
+    <img id="progressIndicator" src="resources/progressIndicator.gif"/>
+</content>
+
+<style>
+{
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+#progressIndicator {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+}
+</style>
+
+</Control>

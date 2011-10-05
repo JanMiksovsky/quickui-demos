@@ -1,0 +1,16 @@
+.tile {
+    margin-bottom: .5em;
+}
+
+.picture {
+    display: inline;
+    height: 50px;
+    margin-right: 9px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+.name {
+    display: inline-block;
+    vertical-align: middle;
+}

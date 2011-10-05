@@ -1,0 +1,54 @@
+<!-- Shows three consecutive months -->
+
+<Control name="ThreeMonthCalendar">
+
+<content>
+    <div>
+        <CalendarMonthWithHeadings id="month1"/>
+    </div>
+    <div>
+        <CalendarMonthWithHeadings id="month2"/>
+    </div>
+    <div>
+        <CalendarMonthWithHeadings id="month3"/>
+    </div>
+</content>
+
+<style>
+{
+    display: table;
+}
+> * {
+    display: table-cell;
+    padding: .5em;
+}
+</style>
+
+<script>
+ThreeMonthCalendar.prototype.extend({
+    
+    date: Control.chain( "$month1", "date", function() {
+        this._syncMonths();
+    }),
+
+    initialize: function() {
+        this._syncMonths();
+    },
+    
+    _syncMonths: function() {
+
+        var date1 = this.$month1().date();
+        var date2 = new Date( date1.getTime() );
+        var date3 = new Date( date1.getTime() );
+        
+        date2.setMonth( date2.getMonth() + 1 );
+        date3.setMonth( date3.getMonth() + 2 );
+        
+        this.$month2().date( date2 );
+        this.$month3().date( date3 );
+    }
+    
+});
+</script>
+
+</Control>

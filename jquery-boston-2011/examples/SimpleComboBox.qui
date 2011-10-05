@@ -1,0 +1,60 @@
+<Control name="SimpleComboBox">
+
+<prototype>
+    <ComboBox>
+        <popup>
+            <ButtonBase class="choice">
+                <CalligraphyNumber number="1"/>
+            </ButtonBase>
+            <ButtonBase class="choice">
+                <CalligraphyNumber number="2"/>
+            </ButtonBase>
+            <ButtonBase class="choice">
+                <CalligraphyNumber number="3"/>
+            </ButtonBase>
+        </popup>
+    </ComboBox>
+</prototype>
+
+<style>
+.choice {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100px;
+    padding-top: 15px;
+    text-align: center;
+    vertical-align: top;
+    width: 100px;
+}
+.CalligraphyNumber img {
+    width: 80px;
+}
+</style>
+
+<script>
+SimpleComboBox.prototype.extend({
+    
+    initialize: function() {
+        
+        SimpleComboBox.superclass.prototype.initialize.call( this );
+        this.genericIfClassIs( SimpleComboBox );
+        
+        var self = this;
+        this.$HasPopup_popup().find(".choice").click( function( event ) {
+            var button = $( event.target ).closest( ".ButtonBase" ).control();
+            if ( button ) {
+                var $number = $( button.content() ).filter( ".CalligraphyNumber" ).control();
+                var number = $number.number();
+                self
+                    .content( number )
+                    .close();
+            }
+        });
+    }
+    
+});  
+</script>
+
+</Control>

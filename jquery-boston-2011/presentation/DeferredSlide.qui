@@ -1,0 +1,41 @@
+<!-- Show content only after the slide is (about to be) shown -->
+
+<Control name="DeferredSlide">
+
+<prototype>
+    <Slide>
+        <ProgressIndicator/>
+    </Slide>
+</prototype>
+
+<script>
+DeferredSlide.prototype.extend({
+
+    controlClass: Control.property[ "class" ](),
+    _loaded: Control.property.bool(),
+    
+    initialize: function() {
+        
+        DeferredSlide.superclass.prototype.initialize.call( this );
+        this.genericIfClassIs( DeferredSlide );
+        
+        var self = this;
+        this.bind( "active", function() { self.load(); });
+    },
+    
+    load: Control.iterator( function() {
+        var controlClass = this.controlClass();
+        if ( !this._loaded() && controlClass ) {
+            var self = this;
+            setTimeout( function() {
+                var control = controlClass.create();
+                self.content( control );
+                self._loaded( true );
+            }, 1 );
+        }
+    })
+    
+});
+</script>
+
+</Control>

@@ -1,0 +1,61 @@
+<!-- Instantiates a given control in various cultures, for testing. -->
+ 
+<Control name="CultureNavigator">
+
+<prototype>
+    <LateralNavigator>
+        <MonthNavigator id="monthNavigator"/>
+    </LateralNavigator>
+</prototype>
+
+<script>
+CultureNavigator.prototype.extend({
+    
+    _culturesArray: Control.property(),
+    
+    initialize: function() {
+        
+        CultureNavigator.superclass.prototype.initialize.call( this );
+        this.genericIfClassIs( CultureNavigator );
+        
+        var culturesArray = [];
+        $.each( Globalize.cultures, function( key, value ) {
+            if ( key !== "default" ) {
+                culturesArray.push( value );
+            }
+        });
+        this._culturesArray( culturesArray );
+        this.cultureIndex( 0 );
+    },
+    
+    cultureIndex: Control.property( function( cultureIndex ) {
+        
+        var culture = this._culturesArray()[ cultureIndex ];
+        this.heading( culture.englishName );
+        
+        // Render the control in the given culture.
+        this.$monthNavigator().culture( culture );
+    }),
+    
+    next: function() {
+        var newIndex = this.cultureIndex() + 1;
+        if ( newIndex >= this._culturesArray().length ) {
+            // Wrap to first culture
+            newIndex = 0;
+        }
+        this.cultureIndex( newIndex );
+    },
+    
+    previous: function() {
+        var newIndex = this.cultureIndex() - 1;
+        if ( newIndex < 0 ) {
+            // Wrap to last culture
+            newIndex = this._culturesArray().length - 1;
+        }
+        this.cultureIndex( newIndex );
+    }
+       
+});
+</script>
+
+</Control>

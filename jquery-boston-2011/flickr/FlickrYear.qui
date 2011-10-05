@@ -1,0 +1,33 @@
+<!--
+Shows the most interesting photo for each day of a given year.
+This is a *terrible* way to do this, because it has to make a separate $.get
+call for each day to get the most interesting photo (see notes at FlickrMonthNavigator).
+This is only useful as a demonstration of how a control developed for one context
+(a month calendar) can get reused in a different context (a year).
+-->
+
+<Control name="FlickrYear">
+
+<prototype>
+    <CalendarYear
+        dayClass="FlickrDay"
+        dayNameFormat="namesAbbr"
+        class="generic"
+     />
+</prototype>
+
+<script>
+FlickrYear.prototype.extend({
+    
+    date: function( date ) {
+        result = FlickrYear.superclass.prototype.date.call( this, date );
+        if ( date !== undefined ) {
+            this.$months().$days().loadPhoto();
+        }
+        return result;
+    }
+
+});
+</script>
+
+</Control>

@@ -1,0 +1,53 @@
+<Control name="TextSlide">
+
+<prototype>
+    <Slide>
+        <h1 id="TextSlide_title"/>
+        <div id="TextSlide_content"/>
+    </Slide>
+</prototype>
+
+<style>
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    overflow-y: auto;
+    padding: 2em;
+}
+
+#TextSlide_title {
+    display: none;
+}
+
+p {
+    margin-top: 0;
+}
+
+/* Un-indent list items. */
+ul, ol {
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.25em;
+}
+</style>
+
+<script>
+TextSlide.prototype.extend({
+    
+    content: Control.chain( "$TextSlide_content", "content" ),
+    
+    title: function( title ) {
+        if ( title !== undefined ) {
+            this.$TextSlide_title()
+                .content( title )
+                .css( "display", title != null ? "block" : "none" );
+        }
+        return TextSlide.superclass.prototype.title.call( this, title );
+    }
+    
+});
+</script>
+</Control>

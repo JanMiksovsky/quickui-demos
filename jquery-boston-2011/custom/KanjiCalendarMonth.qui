@@ -1,0 +1,32 @@
+<Control name="KanjiCalendarMonth">
+    
+<prototype>
+    <CalendarMonthWithHeadings dayClass="KanjiCalendarDay" dayNameFormat="namesAbbr" />
+</prototype>
+
+<style>
+{
+    background: #fdfbee;
+    background: -moz-linear-gradient(top, #fdfbee 50%, #d7c5b4 100%); /* Firefox */
+    background: -ms-linear-gradient(top, #fdfbee 50%, #d7c5b4 100%); /* IE10 */
+    background: -webkit-linear-gradient(top, #fdfbee 50%, #d7c5b4 100%); /* Webkit (Chrome 11+) */
+    color: #7a674f;
+    font-family: Trebuchet, sans-serif;
+    font-size: 18px;
+    padding: 10px; 
+}
+
+.CalendarWeek > * > * {
+    vertical-align: top;
+}
+
+#monthName {
+    display: block;
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-align: center;
+}
+</style>
+
+</Control>

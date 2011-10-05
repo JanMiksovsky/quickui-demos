@@ -1,0 +1,36 @@
+<!-- Show all the parts in a DateComboBox -->
+
+<Control name="CalendarParts">
+
+<content>
+
+    <p>DateComboBox:</p><DateComboBox/>
+    
+    <p>DateTextBox:</p><DateTextBox/>
+    
+    <p>ComboBox:</p>
+    <ComboBox>
+        <popup>I'm a combo box!</popup>
+    </ComboBox>
+    
+    <p>MonthNavigator:</p><MonthNavigator/>
+    <p>CalendarMonth:</p><CalendarMonth/>
+    <p>MonthName:</p><MonthName/>
+    <p>DaysOfWeek:</p><DaysOfWeek format="namesShort"/>
+    <p>CalendarWeek:</p><CalendarWeek/>
+    <p>CalendarDay:</p><CalendarDay style="display: inline-block;"/>
+    
+</content>
+
+<style>
+{
+    font-family: sans-serif;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+</style>
+
+</Control>

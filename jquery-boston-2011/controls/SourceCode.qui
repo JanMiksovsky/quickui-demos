@@ -1,0 +1,56 @@
+<Control name="SourceCode" tag="pre">
+
+<content><code id="SourceCode_content"/></content>
+
+<style>
+{
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 13px;
+    margin: 0;
+}
+</style>
+
+<script>
+SourceCode.prototype.extend({
+	
+	fileName: function(path) {
+		var pathNames = path.split("/");
+		return (pathNames.length == 0)
+			? null
+			: pathNames[pathNames.length - 1];
+	},
+	
+	source: function(source) {
+	    if (source === undefined)
+	    {
+	        return this.$SourceCode_content().text();
+	    }
+	    else
+	    {
+            var formatted = this._normalizeLineEndings(this._tabsToSpaces(source));
+            // Using $.text() escapes the HTML/XML.
+            this.$SourceCode_content().text(formatted);
+            return this;
+	    }
+	},
+	
+	sourceFile: Control.property(function(value) {
+		var self = this;
+		// Load the file.
+		$.get(value, function(data) {
+		    self.source(data);
+		});
+	}),
+	
+	_normalizeLineEndings: function(s) {
+	    return s.replace(/\r\n/g, "\n");
+	},
+	
+	_tabsToSpaces: function(s) {
+		return s.replace(/\t/g, "    ");
+	}
+	
+});
+</script>
+
+</Control>

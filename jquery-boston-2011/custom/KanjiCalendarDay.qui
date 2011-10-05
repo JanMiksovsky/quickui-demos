@@ -1,0 +1,87 @@
+<Control name="KanjiCalendarDay">
+
+<prototype>
+    <CalendarDay>
+        <div id="dayContainer">
+            <div id="arabicNumber"/>
+            <CalligraphyNumber id="calligraphyNumber" class="vertical" />
+        </div>
+    </CalendarDay>
+</prototype>
+
+<style>
+{
+    border: 2px solid transparent;
+    padding: 10px 5px;
+    z-index: 0;
+}
+
+#dayContainer {
+    margin-bottom: 10px;
+    position: relative;
+    width: 80px;
+}
+
+.KanjiCalendarDay:hover {
+    border-color: #bda77d;
+}
+
+#KanjiCalendarDay_content {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1.0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+#calligraphyNumber {
+    /* color: #d7c5b4; */
+    margin-left: 10px;
+    opacity: 0.30;
+}
+
+.KanjiCalendarDay.today {
+    background: #ae9698;
+    color: #fdfbee;
+}
+
+.KanjiCalendarDay.outsideMonth #dayContainer {
+    display: none;
+}
+</style>
+
+<script>
+KanjiCalendarDay.prototype.extend({
+    
+    initialize: function() {
+        
+        KanjiCalendarDay.superclass.prototype.initialize.call( this );
+        
+        var self = this;
+        this.hover(
+            function() {
+                self.$calligraphyNumber().animate({
+                    opacity: 1.0
+                });
+            },
+            function() {
+                self.$calligraphyNumber().animate({
+                    opacity: 0.3
+                });
+            }
+        );
+    },
+    
+    content: Control.chain( "$arabicNumber", "content", function( content ) {
+        if ( !this.hasClass( "outsideRange" ) ) {
+            this.$calligraphyNumber().number( content );
+        } else {
+            this.$calligraphyNumber().content();
+        }
+    })
+        
+});
+</script>
+
+</Control>

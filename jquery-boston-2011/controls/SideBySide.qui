@@ -1,0 +1,88 @@
+<Control name="SideBySide">
+
+<content>
+    <div id="SideBySide_left"/>
+    <div id="SideBySide_right"/>
+</content>
+
+<style>
+{
+    border-bottom: 1px dotted lightgray;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+> * {
+    background: white;
+    border-left: 1px dotted transparent;
+    bottom: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 1em 2em 1em 1em;
+    position: absolute;
+    top: 0;
+    min-width: 50%;
+    z-index: 0;
+}
+
+#SideBySide_left {
+    left: 0;
+}
+#SideBySide_right {
+    border-color: lightgray;
+    right: 0;
+}
+
+/* > .forward { */
+> *:hover {
+    border-color: transparent;
+    -moz-box-shadow: 0 0 10px 3px #404040;
+    -webkit-box-shadow: 0 0 10px 3px #404040;
+    box-shadow: 0 0 10px 3px #404040;
+    overflow-y: auto;
+    min-width: auto;
+    z-index: 1;
+}
+
+</style>
+
+<script>
+SideBySide.prototype.extend({
+    
+    left: Control.chain( "$SideBySide_left", "content" ),
+    right: Control.chain( "$SideBySide_right", "content" ),
+    
+    /*
+    initialize: function() {
+        var self = this;
+        var $sides = this.children();
+        // Only bring a side forward after mouse has hovered there for a bit. 
+        $sides.hover(
+            function hoverIn( event ) {
+                var $side = $( event.target )
+                $side.addClass( "hovered" );
+                window.setTimeout( function() {
+                    var stillHovered = $side.hasClass( "hovered" );
+                    if ( stillHovered ) {
+                        $sides.not( $side ).removeClass( "hovered forward" );
+                        $side.addClass( "forward" );
+                    }
+                }, 400);
+            },
+            function hoverOut( event ) {
+                $(  event.target ).removeClass( "hovered forward" );
+            }
+        );
+    }
+    */
+});
+</script>
+
+</Control>

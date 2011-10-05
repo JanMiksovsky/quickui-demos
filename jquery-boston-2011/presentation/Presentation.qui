@@ -1,0 +1,141 @@
+<!--
+Simple PowerPoint-style presentation. 
+-->
+
+<Control name="Presentation">
+
+<prototype>
+    <Page fill="true">
+        <VerticalPanels fill="true">
+            <content>
+                <Switch id="Presentation_content" tabindex="0" />
+            </content>
+            <bottom>
+                <div id="toolbar">
+                    <ButtonBase id="buttonPrevious">&#9664;</ButtonBase>
+                    <ButtonBase id="buttonNext">&#9654;</ButtonBase>
+                </div>
+            </bottom>
+        </VerticalPanels>
+    </Page>
+</prototype>
+
+<style>
+.VerticalPanels.fill #VerticalPanels_content {
+    overflow: hidden;
+}
+#Presentation_content {
+    height: 100%;
+    width: 100%;
+}
+
+/* Generic apperance */
+.Presentation.generic #toolbar {
+    padding: 10px;
+}
+.Presentation.generic #toolbar .ButtonBase {
+    border-color: transparent;
+    display: inline;
+}
+</style>
+
+<script>
+Presentation.prototype.extend({
+    
+    content: Control.chain( "$Presentation_content", "content" ),
+    slide: Control.chain( "$Presentation_content", "activeChild" ),
+    slides: Control.chain( "$Presentation_content", "children", "cast" ),
+    
+    initialize: function() {
+        
+        this.genericIfClassIs( Presentation );
+        Layout.recalc(); // Above line can change height of toolbar
+        
+        var self = this;
+        this.$buttonPrevious().click( function() {
+            self.previousSlide();
+        });
+        this.$buttonNext().click( function() {
+            self.nextSlide();
+        });
+        
+        // Handle keyboard events
+        this.$Presentation_content().keydown( function( event ) {
+            // Ignore keyboard events that bubbled up from the slide's elements.
+            if ( event.target === self.$Presentation_content()[0] ) {
+                self._keydown(event);
+            }
+        });
+        
+        // Watch for changes in the "slide" parameter of the URL.
+        $( window ).hashchange( function() {
+            var slideIndex = Page.urlParameters().slide;
+            if ( slideIndex != null && slideIndex != self.slideIndex() ) {
+                self.slideIndex( slideIndex );
+            }
+        });
+    },
+    
+    nextSlide: function() {
+        var index = this.slideIndex();
+        if ( index < this.slides().length - 1 ) {
+            this.slideIndex( index + 1 );
+        }
+    },
+    
+    previousSlide: function() {
+        var index = this.slideIndex();
+        if ( index > 0 ) {
+            this.slideIndex( index - 1);
+        }
+    },
+
+    slideIndex: Control.chain( "$Presentation_content", "activeIndex", function( index ) {
+        if ( index != null ) {
+            window.location.href = "#slide=" + index; 
+        }
+        
+        // Put focus back on container so we can get keyboard events.
+        this.$Presentation_content().focus();
+    }),
+
+    start: function() {
+        var slideIndex = Page.urlParameters().slide || 0;
+        this.slideIndex( slideIndex );
+    },
+    
+    _getSlideWithClassName: function( className ) {
+        var slides = this.slides();
+        for ( var i = 0; i < slides.length; i++ ) {
+            var slide = slides[i];
+            if ( slide.className === className ) {
+                return slide;
+            }
+        }
+        return null;
+    },
+    
+    _keydown: function( event ) {
+        var self = this;
+        var bindings = {
+            36: function() { self.slideIndex(0); },
+            37: this.previousSlide,
+            39: this.nextSlide,
+        };
+        var binding = bindings[event.keyCode];
+        var handled;
+        if (binding)
+        {
+            handled = binding.call(this);
+            if (handled)
+            {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        }
+    }
+    
+});
+</script>
+
+</Control>

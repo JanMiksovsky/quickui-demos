@@ -1,0 +1,106 @@
+<Control name="SlidingTabs">
+
+<content>
+    <div id="container">
+        <div id="SlidingTabs_content"/>
+    </div>
+    <Repeater id="tabButtons"/>
+</content>
+
+<style>
+{
+    text-align: center;
+}
+
+#container {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#SlidingTabs_content {
+    position: relative;
+    white-space: nowrap;
+}
+#SlidingTabs_content > * {
+    display: inline-block;
+}
+
+#tabButtons {
+    display: inline-block;
+    margin: 0 auto;
+}
+</style>
+
+<script>
+SlidingTabs.prototype.extend({
+    
+    tabs: Control.chain( "$SlidingTabs_content", "children" ),
+    tabButtons: Control.chain( "$tabButtons", "children" ),
+    tabButtonClass: Control.chain( "$tabButtons", "itemClass" ),
+    
+    initialize: function() {
+
+        if ( this.tabButtonClass() == null ) {
+            this.tabButtonClass( DotButton );
+        }
+        
+        var self = this;
+        this.insertedIntoDocument( function() {
+            self._adjustWidths();
+        });
+        //this._adjustWidths();
+        
+        this.$tabButtons().click( function( event ) {
+            // TODO: var tabButton = $( event.target ).parent( self.tabs() );
+            var tabButtonClassName = self.tabButtonClass().prototype.className;
+            var tabButton = $( event.target ).closest( "." + tabButtonClassName );
+            if ( tabButton ) {
+                var tabIndex = self.tabButtons().index( tabButton );
+                if ( tabIndex >= 0 ) {
+                    self.tabIndex( tabIndex );
+                }
+            }
+        });
+        
+        this.tabIndex(0);
+    },
+
+    content: Control.chain( "$SlidingTabs_content", "content", function() {
+        this.$tabButtons().count( this.tabs().length );
+        this._adjustWidths();
+    }),
+    
+    tabIndex: function( tabIndex ) {
+        
+        var tab = this.tabs().eq( tabIndex );
+        var left = tab.position().left;
+        this.$SlidingTabs_content().animate({
+            "left": -left
+        }, "fast" );
+        
+        this.tabButtons()
+            .removeClass( "selected" )
+            .eq( tabIndex )
+                .addClass( "selected" );
+        
+        return this;        
+    },
+    
+    _adjustWidths: function() {
+        var tabs = this.tabs();
+        tabs.width( "auto" );
+        var widths = tabs.map( function( index, tab ) {
+            return $( tab ).outerWidth();
+        }).get();
+        var maxTabWidth = Math.max.apply( this, widths );
+        tabs.width( maxTabWidth );
+        this.$container().width( maxTabWidth );
+    }
+    
+});
+</script>
+
+</Control>

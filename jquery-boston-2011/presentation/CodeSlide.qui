@@ -1,0 +1,43 @@
+<Control name="CodeSlide">
+
+<prototype>
+    <SideBySideSlide>
+        <left>
+            <CodeColorizer id="CodeSlide_sourceCode"/>
+        </left>
+        <right>
+            <div id="CodeSlide_demo"/>
+        </right>
+    </SideBySideSlide>
+</prototype>
+
+<script>
+CodeSlide.prototype.extend({
+
+    demo: Control.chain( "$CodeSlide_demo", "content" ),
+    
+    sourceFile: Control.chain( "$CodeSlide_sourceCode", "sourceFile", function( sourceFile ) {
+        var demo = this.demo();
+        if ( demo == null || demo.length === 0 ) {
+            // By default, load the indicated class as a demo.
+            var pathParts = sourceFile.split("/");
+            var fileName = pathParts[ pathParts.length - 1 ];
+            var fileNameParts = fileName.split(".");
+            var className = fileNameParts[0];
+            var fileExtension = fileNameParts[1];
+            if ( fileExtension === "qui" ) {
+                var classFn = Control._convertToClass( className );
+                var control = classFn.create();
+                this
+                    .title( className )
+                    .$CodeSlide_demo()
+                        .empty()
+                        .append( control );
+            }
+        }
+    })
+    
+});
+</script>
+
+</Control>

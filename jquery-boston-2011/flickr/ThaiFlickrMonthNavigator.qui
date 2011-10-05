@@ -1,0 +1,7 @@
+<Control name="ThaiFlickrMonthNavigator">
+
+<prototype>
+    <FlickrMonthNavigator culture="th"/>
+</prototype>
+
+</Control>

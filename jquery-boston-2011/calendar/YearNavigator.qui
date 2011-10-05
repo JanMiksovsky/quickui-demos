@@ -1,0 +1,72 @@
+<!-- Shows a year calendar, allows user to navigate to previous/next year -->
+
+<Control name="YearNavigator">
+
+<prototype>
+    <LateralNavigator>
+        <CalendarYear id="calendar" showYear="false" />
+    </LateralNavigator>
+</prototype>
+
+<style>
+/* Generic appearance */
+{
+    font-family: sans-serif;
+}
+.YearNavigator.generic #LateralNavigator_caption {
+    font-size: larger;
+    font-weight: bold;
+    padding: .5em;
+    text-align: center;
+}
+</style>
+
+<script>
+YearNavigator.prototype.extend({
+    
+    date: Control.chain( "$calendar", "date" ),
+    dayClass: Control.chain( "$calendar", "dayClass" ),
+    dayNameFormat: Control.chain( "$calendar", "dayNameFormat" ),
+
+    initialize: function() {
+        
+        YearNavigator.superclass.prototype.initialize.call( this );        
+        this.genericIfClassIs( YearNavigator );
+        
+        var self = this;
+        this.bind({
+            "dateChanged": function( event, date ) {
+                self._updateHeading();
+            },
+            "dateClicked": function( event, date ) {
+                self.date( date );
+            }
+        });
+        this._updateHeading();
+    },
+
+    next: function() {
+        // Go one year forward.
+        this._adjustYear( 1 );
+    },
+    
+    previous: function() {
+        // Go one year backward.
+        this._adjustYear( -1 );
+    },
+    
+    // Move one year forward (if direction is positive) or backward
+    // (if direction is negative).
+    _adjustYear: function( direction ) {
+        var newDate = new Date( this.date().getTime() );
+        newDate.setFullYear( newDate.getFullYear() + direction );
+        this.date( newDate );
+    },
+
+    _updateHeading: function() {
+        this.heading( this.date().getFullYear() );
+    }
+    
+});
+</script>
+</Control>

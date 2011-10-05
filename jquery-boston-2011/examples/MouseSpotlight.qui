@@ -1,0 +1,60 @@
+<Control name="MouseSpotlight">
+
+<content>
+    <div id="MouseSpotlight_content"/>
+    <div id="spotlight"/>
+</content>
+
+<style>
+{
+    cursor: default;
+    position: relative;
+    z-index: 0;
+}
+
+#spotlight {
+    background: -moz-radial-gradient( circle, white 0px, rgba( 255, 255, 255, 0 ) 40px );
+    background: -webkit-gradient( radial, from( white ), to( gray ) );
+    display: none;
+    height: 80px;
+    position: absolute;
+    width: 80px;
+    z-index: 1;
+}
+</style>
+
+<script>
+MouseSpotlight.prototype.extend({
+    
+    content: Control.chain( "$MouseSpotlight_content", "content" ),
+    
+    initialize: function() {
+        var self = this;
+        var spotlightWidth = this.$spotlight().width();
+        var spotlightHeight = this.$spotlight().height();
+        this.bind({
+
+            mousemove: function( event ) {
+                var offset = self.offset();
+                var mouseX = event.pageX - offset.left;
+                var mouseY = event.pageY - offset.top;
+                var spotlightX = mouseX - ( spotlightWidth / 2 );
+                var spotlightY = mouseY - ( spotlightHeight / 2 );
+                self.$spotlight()
+                    .css({
+                        top: spotlightY,
+                        left: spotlightX
+                    })
+                    .show();
+            },
+            
+            mouseout: function() {
+                self.$spotlight().hide();
+            }
+        });
+    }
+    
+});
+</script>
+
+</Control>

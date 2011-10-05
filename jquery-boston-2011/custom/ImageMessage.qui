@@ -1,0 +1,33 @@
+<Control name="ImageMessage">
+
+<script>
+ImageMessage.prototype.extend({
+    
+    imageDictionary: Control.property( function() { this._refresh(); } ),
+    message: Control.property( function() { this._refresh(); } ),
+    
+    _refresh: function() {
+        
+        var imageDictionary = this.imageDictionary();
+        var message = this.message();
+        if ( !imageDictionary || !message ) {
+            return;
+        }
+
+        var imageElements = [];        
+        for ( var i = 0; i < message.length; i++ ) {
+            var c = message[i];
+            if ( imageDictionary[c] ) {
+                var imageElement = $("<img/>")
+                                        .prop( "src", imageDictionary[c] );
+                imageElements.push( imageElement );
+            }
+        }
+        
+        this.content( imageElements );
+    }
+    
+});
+</script>
+
+</Control>
