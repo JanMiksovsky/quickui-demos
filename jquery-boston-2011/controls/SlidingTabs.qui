@@ -47,12 +47,11 @@ SlidingTabs.prototype.extend({
             this.tabButtonClass( DotButton );
         }
         
-        var self = this;
-        this.insertedIntoDocument( function() {
-            self._adjustWidths();
+        this.inDocument( function( $control ) {
+            $control._adjustWidths();
         });
-        //this._adjustWidths();
         
+        var self = this;
         this.$tabButtons().click( function( event ) {
             // TODO: var tabButton = $( event.target ).parent( self.tabs() );
             var tabButtonClassName = self.tabButtonClass().prototype.className;
