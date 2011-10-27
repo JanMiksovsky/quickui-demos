@@ -1,15 +1,15 @@
 /*** ButtonBase ***/
 
 .ButtonBase {
-	cursor: pointer;
-	display: inline-block;
+    cursor: pointer;
+    display: inline-block;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
     user-select: none;
 }
 
 .ButtonBase.disabled {
-	cursor: default;
+    cursor: default;
 }
 
 /* Generic appearance */
@@ -38,37 +38,47 @@
 
 .Page.fill {
     height: 100%;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
 }
 
 /*** Popup ***/
 
 .Popup {
-	display: none;
-	position: absolute;
-	z-index: 1;
+    display: none;
+    position: absolute;
+    z-index: 1;
 }
 
 /* Generic appearance */
 .Popup.generic {
     background: white;
     border: 1px solid gray;
+    -moz-box-shadow: 3px 3px 5px #b0b0b0;
+    -webkit-box-shadow: 3px 3px 5px #b0b0b0;
+    box-shadow: 3px 3px 5px #b0b0b0;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     padding: .25em;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /*** Sprite ***/
 
 .Sprite {
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 /*** Switch ***/
 
 .Switch .hidden {
-	display: none !important;
+    display: none !important;
 }
 
 /*** TabSet ***/
@@ -77,8 +87,29 @@
     position: relative;
 }
 
-.TabSet #buttons {
+.TabSet #tabButtons {
     white-space: nowrap; /* So tabs don't wrap. */
+}
+
+/* Generic appearance */
+.TabSet.generic #TabSet_content {
+    border: 1px solid gray;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+.TabSet.generic #tabButtons {
+    position: relative;
+    top: 1px;
+    z-index: 1;
+}
+.TabSet.generic #tabButtons .ButtonBase.generic {
+    margin-left: 0.5em;
+}
+.TabSet.generic #tabButtons .ButtonBase.generic.selected {
+    border-bottom-color: white;
 }
 
 /*** TextBox ***/
@@ -90,21 +121,26 @@
 
 /*** ToggleButton ***/
 
-.ToggleButton .ToggleButtonBase.generic.selected {
+/* Generic appearance */
+
+.ToggleButton.generic.selected {
     background: lightgray;
     border-color: gray;
+}
+.ToggleButton.generic.selected:hover {
+    background-color: #888;
 }
 
 /*** VerticalAlign ***/
 
 .VerticalAlign {
-	display: table;
-	height: 100%;
+    display: table;
+    height: 100%;
 }
 
 .VerticalAlign > * {
-	display: table-cell;
-	vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /*** VerticalPanels ***/
@@ -150,6 +186,10 @@
 
 .ComboBox #ComboBox_content input[type='text'] {
     border: none;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     outline: none;
     padding: 2px;
 }
@@ -157,7 +197,6 @@
 .ComboBox #dropdownButton {
     text-align: center;
     vertical-align: middle;
-    width: 1.4em;
 }
 
 /* Generic appearance */
@@ -168,22 +207,15 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-.ComboBox.generic #HasPopup_popup {
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    user-select: none;
-}
 .ComboBox.generic #dropdownButton {
-    border-left: 1px solid transparent;
-}
-.ComboBox.generic #dropdownButton:hover {
-    border-color: lightgray;
+    border: none;
+    padding: 0 0.25em; /* Tighter padding that normal */
 }
 
 /*** Dialog ***/
 
 .Dialog {
-	position: fixed;
+    position: fixed;
 }
 
 /* Generic appearance */
