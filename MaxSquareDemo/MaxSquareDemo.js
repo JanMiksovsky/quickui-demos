@@ -1,17 +1,17 @@
 //
 // DemoPage
 //
-DemoPage = Page.subclass( "DemoPage", function renderDemoPage() {
-	this.properties({
-		"fill": "true",
-		"content": [
-			" ",
-			this._define( "$photoCanvas", PhotoCanvas.create({
-				"id": "photoCanvas"
-			}) ),
-			" "
-		]
-	}, Page );
+DemoPage = Page.subclass({
+    name: "DemoPage",
+    fill: "true",
+    content: [
+        " ",
+        {
+            control: "PhotoCanvas",
+            id: "photoCanvas"
+        },
+        " "
+    ]
 });
 DemoPage.prototype.extend({
     
@@ -60,14 +60,16 @@ DemoPage.prototype.extend({
 //
 // Photo
 //
-Photo = Control.subclass( "Photo", function renderPhoto() {
-	this.properties({
-		"content": [
-			" ",
-			this._define( "$photo", Control( "<img id=\"photo\" />" ) ),
-			" "
-		]
-	}, Control );
+Photo = Control.subclass({
+    name: "Photo",
+    content: [
+        " ",
+        {
+            html: "<img />",
+            id: "photo"
+        },
+        " "
+    ]
 });
 Photo.prototype.extend({
     href: Control.property(),
@@ -83,10 +85,8 @@ Photo.prototype.extend({
 //
 // PhotoCanvas
 //
-PhotoCanvas = Layout.subclass( "PhotoCanvas", function renderPhotoCanvas() {
-	this.properties({
-
-	}, Layout );
+PhotoCanvas = Layout.subclass({
+    name: "PhotoCanvas"
 });
 PhotoCanvas.prototype.extend({
 

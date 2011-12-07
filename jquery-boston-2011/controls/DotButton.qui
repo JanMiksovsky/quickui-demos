@@ -3,7 +3,7 @@
 <Control name="DotButton">
 
 <content>
-    <ButtonBase id="button" generic="false"/>
+    <BasicButton id="button" generic="false"/>
 </content>
 
 <style>

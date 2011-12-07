@@ -3,15 +3,15 @@
 <prototype>
     <ComboBox>
         <popup>
-            <ButtonBase class="choice">
+            <BasicButton class="choice">
                 <CalligraphyNumber number="1"/>
-            </ButtonBase>
-            <ButtonBase class="choice">
+            </BasicButton>
+            <BasicButton class="choice">
                 <CalligraphyNumber number="2"/>
-            </ButtonBase>
-            <ButtonBase class="choice">
+            </BasicButton>
+            <BasicButton class="choice">
                 <CalligraphyNumber number="3"/>
-            </ButtonBase>
+            </BasicButton>
         </popup>
     </ComboBox>
 </prototype>
@@ -43,7 +43,7 @@ SimpleComboBox.prototype.extend({
         
         var self = this;
         this.$HasPopup_popup().find(".choice").click( function( event ) {
-            var button = $( event.target ).closest( ".ButtonBase" ).control();
+            var button = $( event.target ).closest( ".BasicButton" ).control();
             if ( button ) {
                 var $number = $( button.content() ).filter( ".CalligraphyNumber" ).control();
                 var number = $number.number();

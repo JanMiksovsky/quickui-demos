@@ -12,8 +12,8 @@ Simple PowerPoint-style presentation.
             </content>
             <bottom>
                 <div id="toolbar">
-                    <ButtonBase id="buttonPrevious">&#9664;</ButtonBase>
-                    <ButtonBase id="buttonNext">&#9654;</ButtonBase>
+                    <BasicButton id="buttonPrevious">&#9664;</BasicButton>
+                    <BasicButton id="buttonNext">&#9654;</BasicButton>
                 </div>
             </bottom>
         </VerticalPanels>
@@ -33,7 +33,7 @@ Simple PowerPoint-style presentation.
 .Presentation.generic #toolbar {
     padding: 10px;
 }
-.Presentation.generic #toolbar .ButtonBase {
+.Presentation.generic #toolbar .BasicButton {
     border-color: transparent;
     display: inline;
 }
