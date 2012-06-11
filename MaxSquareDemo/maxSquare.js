@@ -45,37 +45,37 @@ function maxSquare(canvasWidth, canvasHeight, n) {
     // Second choice: Pick the next lowest integer.
     var columns2 = Math.floor(columnsTarget);
 
-	if (columns2 == 0 || columns2 == columns1)
-	{
-		// Second choice is useless or same as first, so use first choice.
-		return tableDimensions1;
-	}
+    if (columns2 == 0 || columns2 == columns1)
+    {
+        // Second choice is useless or same as first, so use first choice.
+        return tableDimensions1;
+    }
 
-	var rows2 = Math.ceil(n / columns2);
-	var tableDimensions2 = { columns: columns2, rows: rows2 };
-	
-	// Compare first and second choice to see which produces the
-	// cells with the biggest inscribed square.
-	var squareLength1 = maxSquare.lengthOfInscribedSquare(canvasWidth, canvasHeight, tableDimensions1);
-	var squareLength2 = maxSquare.lengthOfInscribedSquare(canvasWidth, canvasHeight, tableDimensions2);
+    var rows2 = Math.ceil(n / columns2);
+    var tableDimensions2 = { columns: columns2, rows: rows2 };
+    
+    // Compare first and second choice to see which produces the
+    // cells with the biggest inscribed square.
+    var squareLength1 = maxSquare.lengthOfInscribedSquare(canvasWidth, canvasHeight, tableDimensions1);
+    var squareLength2 = maxSquare.lengthOfInscribedSquare(canvasWidth, canvasHeight, tableDimensions2);
 
-	if (squareLength2 > squareLength1)
-	{
-	    // Second choice has bigger squares.
-	    return tableDimensions2;
-	}
-	else if (squareLength2 == squareLength1 &&
-	    rows2 * columns2 < rows1 * columns1)
-	{
-	    // Second choice has cells that hold the same square,
-	    // but this choice wastes less space.
-	    return tableDimensions2;
-	}
-	else
-	{
-		// First choice uses space most efficiently.
-		return tableDimensions1;
-	}
+    if (squareLength2 > squareLength1)
+    {
+        // Second choice has bigger squares.
+        return tableDimensions2;
+    }
+    else if (squareLength2 == squareLength1 &&
+        rows2 * columns2 < rows1 * columns1)
+    {
+        // Second choice has cells that hold the same square,
+        // but this choice wastes less space.
+        return tableDimensions2;
+    }
+    else
+    {
+        // First choice uses space most efficiently.
+        return tableDimensions1;
+    }
 }
 
 /*

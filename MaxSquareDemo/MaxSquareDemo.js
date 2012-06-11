@@ -1,17 +1,16 @@
-//
-// DemoPage
-//
-DemoPage = Page.subclass({
-    name: "DemoPage",
-    fill: "true",
-    content: [
-        " ",
-        {
-            control: "PhotoCanvas",
-            id: "photoCanvas"
-        },
-        " "
-    ]
+var DemoPage = Page.sub({
+    className: "DemoPage",
+    inherited: {
+        fill: "true",
+        content: [
+            " ",
+            {
+                control: "PhotoCanvas",
+                ref: "photoCanvas"
+            },
+            " "
+        ]
+    }
 });
 DemoPage.prototype.extend({
     
@@ -57,19 +56,18 @@ DemoPage.prototype.extend({
     }
 });
 
-//
-// Photo
-//
-Photo = Control.subclass({
-    name: "Photo",
-    content: [
-        " ",
-        {
-            html: "<img />",
-            id: "photo"
-        },
-        " "
-    ]
+var Photo = Control.sub({
+    className: "Photo",
+    inherited: {
+        content: [
+            " ",
+            {
+                html: "<img />",
+                ref: "photo"
+            },
+            " "
+        ]
+    }
 });
 Photo.prototype.extend({
     href: Control.property(),
@@ -82,13 +80,17 @@ Photo.prototype.extend({
     }
 });
 
-//
-// PhotoCanvas
-//
-PhotoCanvas = Layout.subclass({
-    name: "PhotoCanvas"
+var PhotoCanvas = Control.sub({
+    className: "PhotoCanvas"
 });
 PhotoCanvas.prototype.extend({
+
+    initialize: function() {
+        var self = this;
+        this.on( "layout", function() {
+            self.refresh();
+        });
+    },
 
     // An array of URLs pointing to images.
     photos: Control.property(function(photos) {
@@ -100,13 +102,14 @@ PhotoCanvas.prototype.extend({
         });
         this
             .content(photoElements)
-            .layout();
+            .refresh();
     }),
 
-    layout: function() {
+    refresh: function() {
         var $children = this.children();
-        var cellSize = maxSquare.optimalCellSize(this.width(), this.height(), $children.length);
+        var cellSize = maxSquare.optimalCellSize( this.width(), this.height(), $children.length );
         $children.css(cellSize);
-    }    
+    }
+
 });
 

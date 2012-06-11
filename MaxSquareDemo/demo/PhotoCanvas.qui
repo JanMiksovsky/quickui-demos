@@ -1,8 +1,4 @@
-<Control name="PhotoCanvas">
-    
-<prototype>
-    <Layout/>
-</prototype>
+<Control className="PhotoCanvas">
 
 <style>
 {
@@ -24,6 +20,13 @@
 <script>
 PhotoCanvas.prototype.extend({
 
+    initialize: function() {
+        var self = this;
+        this.on( "layout", function() {
+            self.refresh();
+        });
+    },
+
     // An array of URLs pointing to images.
     photos: Control.property(function(photos) {
         var photoElements = $.map(photos, function(photo) {
@@ -34,14 +37,15 @@ PhotoCanvas.prototype.extend({
         });
         this
             .content(photoElements)
-            .layout();
+            .refresh();
     }),
 
-    layout: function() {
+    refresh: function() {
         var $children = this.children();
-        var cellSize = maxSquare.optimalCellSize(this.width(), this.height(), $children.length);
+        var cellSize = maxSquare.optimalCellSize( this.width(), this.height(), $children.length );
         $children.css(cellSize);
-    }    
+    }
+
 });  
 </script>
 

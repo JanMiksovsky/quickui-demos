@@ -1,8 +1,8 @@
-<Control name="DemoPage">
+<Control className="DemoPage">
     
 <prototype>
     <Page fill="true">
-        <PhotoCanvas id="photoCanvas"/>
+        <PhotoCanvas ref="photoCanvas"/>
     </Page>
 </prototype>
 
@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-#photoCanvas {
+.photoCanvas {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;

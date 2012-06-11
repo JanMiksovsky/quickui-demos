@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 
-.DemoPage #photoCanvas {
+.DemoPage .photoCanvas {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -20,7 +20,7 @@
     position: relative;
 }
 
-.Photo #photo {
+.Photo .photo {
     -moz-box-shadow: 5px 5px 10px #b0b0b0;
     -webkit-box-shadow: 5px 5px 10px #b0b0b0;
     box-shadow: 5px 5px 10px #b0b0b0;
