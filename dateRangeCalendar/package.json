@@ -1,0 +1,8 @@
+{
+    "name": "quickui-date-range-calendar",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt-contrib-less": "*",
+        "less": "*"
+    }
+}

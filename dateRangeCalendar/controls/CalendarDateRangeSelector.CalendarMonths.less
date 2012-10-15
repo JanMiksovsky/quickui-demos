@@ -1,0 +1,63 @@
+@selectionBorderColor: #888;
+@selectionHoverBorderColor: #aaa;
+
+.CalendarDateRangeSelector {
+
+  &.generic {
+
+    .CalendarDayButton > .button {
+      border: 1px solid transparent;
+      padding: 3px;
+    }
+
+    .firstDayOfRange .button {
+      border-left-color: @selectionBorderColor;
+    }
+    .firstWeekOfRange .button {
+      border-top-color: @selectionBorderColor;
+    }
+    .lastWeekOfRange .button {
+      border-bottom-color: @selectionBorderColor;
+    }
+    .lastDayOfRange .button {
+      border-right-color: @selectionBorderColor;
+    }
+
+    .selected.firstDayOfWeek .button {
+      border-left-color: @selectionBorderColor;
+    }
+    .selected.lastDayOfWeek .button {
+      border-right-color: @selectionBorderColor;
+    }
+
+    &.selectEnd {
+
+      .selected .button {
+        background: #f8f8f8;
+        font-weight: inherit;
+      }
+
+      .firstDayOfRange .button {
+        border-left-color: @selectionHoverBorderColor;
+      }
+      .firstWeekOfRange .button {
+        border-top-color: @selectionHoverBorderColor;
+      }
+      .lastWeekOfRange .button {
+        border-bottom-color: @selectionHoverBorderColor;
+      }
+      .lastDayOfRange .button {
+        border-right-color: @selectionHoverBorderColor;
+      }
+      .selected.firstDayOfWeek .button {
+        border-left-color: @selectionHoverBorderColor;
+      }
+      .selected.lastDayOfWeek .button {
+        border-right-color: @selectionHoverBorderColor;
+      }
+
+    }
+
+  }
+
+}

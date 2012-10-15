@@ -1,0 +1,21 @@
+.CalendarMonths {
+
+  > * {
+    display: inline-table;
+  }
+
+  &.generic {
+
+    > * {
+      margin-right: 1em;
+    }
+    > *:last-child {
+      margin-right: inherit;
+    }
+
+    .outsideMonth {
+      visibility: hidden;
+    }
+  }
+
+}
