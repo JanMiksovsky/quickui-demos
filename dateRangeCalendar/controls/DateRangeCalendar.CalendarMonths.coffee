@@ -1,4 +1,4 @@
-class window.CalendarDateRangeSelector extends CalendarMonths
+class window.DateRangeCalendar extends CalendarMonths
 
   inherited:
     dayClass: CalendarDayButton
