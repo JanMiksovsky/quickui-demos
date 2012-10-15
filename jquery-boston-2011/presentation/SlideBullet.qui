@@ -1,7 +1,7 @@
-<Control name="SlideBullet" tag="li">
+<Control className="SlideBullet" tag="li">
 
 <content>
-    <div id="SlideBullet_content"/>
+    <div ref="SlideBullet_content"/>
 </content>
 
 <script>

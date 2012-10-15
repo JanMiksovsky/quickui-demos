@@ -1,6 +1,6 @@
-<Control name="SourceCode" tag="pre">
+<Control className="SourceCode" tag="pre">
 
-<content><code id="SourceCode_content"/></content>
+<content><code ref="SourceCode_content"/></content>
 
 <style>
 {

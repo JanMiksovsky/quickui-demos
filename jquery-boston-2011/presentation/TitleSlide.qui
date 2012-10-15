@@ -1,4 +1,4 @@
-<Control name="TitleSlide">
+<Control className="TitleSlide">
 
 <prototype>
     <TextSlide/>

@@ -1,6 +1,6 @@
 <!-- Show content only after the slide is (about to be) shown -->
 
-<Control name="DeferredSlide">
+<Control className="DeferredSlide">
 
 <prototype>
     <Slide>
@@ -11,7 +11,7 @@
 <script>
 DeferredSlide.prototype.extend({
 
-    controlClass: Control.property[ "class" ](),
+    contentClass: Control.property[ "class" ](),
     _loaded: Control.property.bool(),
     
     initialize: function() {
@@ -24,11 +24,11 @@ DeferredSlide.prototype.extend({
     },
     
     load: Control.iterator( function() {
-        var controlClass = this.controlClass();
-        if ( !this._loaded() && controlClass ) {
+        var contentClass = this.contentClass();
+        if ( !this._loaded() && contentClass ) {
             var self = this;
             setTimeout( function() {
-                var control = controlClass.create();
+                var control = contentClass.create();
                 self.content( control );
                 self._loaded( true );
             }, 1 );

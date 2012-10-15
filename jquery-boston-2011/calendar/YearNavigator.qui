@@ -1,10 +1,10 @@
 <!-- Shows a year calendar, allows user to navigate to previous/next year -->
 
-<Control name="YearNavigator">
+<Control className="YearNavigator">
 
 <prototype>
     <LateralNavigator>
-        <CalendarYear id="calendar" showYear="false" />
+        <CalendarYear ref="calendar" showYear="false" />
     </LateralNavigator>
 </prototype>
 

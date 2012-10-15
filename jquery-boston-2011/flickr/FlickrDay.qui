@@ -1,12 +1,12 @@
 <!-- Shows the most interesting photo on Flickr for a given day. -->
 
-<Control name="FlickrDay">
+<Control className="FlickrDay">
 
 <prototype>
     <CalendarDay>
-        <div id="FlickrDay_content"/>
-        <a id="link">
-            <img id="image"/>
+        <div ref="FlickrDay_content"/>
+        <a ref="link">
+            <img ref="image"/>
         </a>
     </CalendarDay>
 </prototype>

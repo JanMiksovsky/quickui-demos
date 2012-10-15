@@ -1,9 +1,9 @@
 <!-- Text box that parses dates -->
 
-<Control name="DateTextBox">
+<Control className="DateTextBox">
 
 <content>
-    <input id="text" type="text" />
+    <input ref="text" type="text" />
 </content>
 
 <style>

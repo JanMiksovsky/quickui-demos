@@ -1,4 +1,4 @@
-<Control name="ImageMessage">
+<Control className="ImageMessage">
 
 <script>
 ImageMessage.prototype.extend({

@@ -1,13 +1,13 @@
 <!-- Shows a month, allowing using to navigate months and select a date. -->
 
-<Control name="MonthNavigator">
+<Control className="MonthNavigator">
 
 <prototype>
     <LateralNavigator>
         <heading>
-            <MonthName id="monthName"/> <span id="year"/>
+            <MonthName ref="monthName"/> <span ref="year"/>
         </heading>
-        <CalendarMonthWithHeadings id="calendar" showMonthName="false" />
+        <CalendarMonthWithHeadings ref="calendar" showMonthName="false" />
     </LateralNavigator>
 </prototype>
 

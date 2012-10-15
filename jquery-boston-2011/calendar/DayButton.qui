@@ -1,8 +1,8 @@
-<Control name="DayButton">
+<Control className="DayButton">
 
 <prototype>
     <CalendarDay>
-        <BasicButton id="button" generic="false"/>
+        <BasicButton ref="button" generic="false"/>
     </CalendarDay>
 </prototype>
 

@@ -6,16 +6,16 @@ the most interesting photo for each day of the month; separate calls have to be 
 per day.
 -->
 
-<Control name="FlickrMonthNavigator">
+<Control className="FlickrMonthNavigator">
 
 <prototype>
     <MonthNavigator dayClass="FlickrDay" dayNameFormat="namesAbbr">
         <previousButtonContent>
             <span class="chevron">«</span>
-            <MonthName id="previousMonthName" class="monthButtonName" />
+            <MonthName ref="previousMonthName" class="monthButtonName" />
         </previousButtonContent>
         <nextButtonContent>
-            <MonthName id="nextMonthName" class="monthButtonName"/>
+            <MonthName ref="nextMonthName" class="monthButtonName"/>
             <span class="chevron">»</span>
         </nextButtonContent>
     </MonthNavigator>

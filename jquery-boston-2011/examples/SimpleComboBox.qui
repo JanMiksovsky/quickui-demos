@@ -1,4 +1,4 @@
-<Control name="SimpleComboBox">
+<Control className="SimpleComboBox">
 
 <prototype>
     <ComboBox>

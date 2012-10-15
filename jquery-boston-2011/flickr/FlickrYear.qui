@@ -6,7 +6,7 @@ This is only useful as a demonstration of how a control developed for one contex
 (a month calendar) can get reused in a different context (a year).
 -->
 
-<Control name="FlickrYear">
+<Control className="FlickrYear">
 
 <prototype>
     <CalendarYear

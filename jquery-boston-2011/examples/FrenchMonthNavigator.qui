@@ -1,4 +1,4 @@
-<Control name="FrenchMonthNavigator">
+<Control className="FrenchMonthNavigator">
 
 <prototype>
     <MonthNavigator culture="fr" generic="true" />

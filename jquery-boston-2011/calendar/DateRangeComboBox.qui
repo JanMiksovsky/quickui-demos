@@ -2,14 +2,14 @@
 Lets user pick a date range.
 -->
 
-<Control name="DateRangeComboBox">
+<Control className="DateRangeComboBox">
 
 <prototype>
     <ComboBox textBoxClass="DateTextBox">
         <popup>
             <LateralNavigator>
-                <MonthCalendar id="calendar" />
-                <MonthCalendar id="calendar" />
+                <MonthCalendar ref="calendar" />
+                <MonthCalendar ref="calendar" />
             </LateralNavigator>
         </popup>
     </ComboBox>

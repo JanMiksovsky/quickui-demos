@@ -1,12 +1,12 @@
 <!-- Shows a calendar for a full year -->
 
-<Control name="CalendarYear">
+<Control className="CalendarYear">
 
 <content>
-    <div id="yearTable">
+    <div ref="yearTable">
         <div>
             <div/>
-            <div id="year"/>
+            <div ref="year"/>
             <div/>
         </div>
         <div>

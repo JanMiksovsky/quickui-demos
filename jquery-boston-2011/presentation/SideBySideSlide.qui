@@ -1,8 +1,8 @@
-<Control name="SideBySideSlide">
+<Control className="SideBySideSlide">
     
 <prototype>
     <Slide>
-        <SideBySide id="sideBySide"/>
+        <SideBySide ref="sideBySide"/>
     </Slide>
 </prototype>
 

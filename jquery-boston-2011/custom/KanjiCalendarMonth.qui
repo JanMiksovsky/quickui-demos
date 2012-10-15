@@ -1,4 +1,4 @@
-<Control name="KanjiCalendarMonth">
+<Control className="KanjiCalendarMonth">
     
 <prototype>
     <CalendarMonthWithHeadings dayClass="KanjiCalendarDay" dayNameFormat="namesAbbr" />

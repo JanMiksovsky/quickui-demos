@@ -1,10 +1,10 @@
-<Control name="SlidingTabs">
+<Control className="SlidingTabs">
 
 <content>
-    <div id="container">
-        <div id="SlidingTabs_content"/>
+    <div ref="container">
+        <div ref="SlidingTabs_content"/>
     </div>
-    <Repeater id="tabButtons"/>
+    <Repeater ref="tabButtons"/>
 </content>
 
 <style>

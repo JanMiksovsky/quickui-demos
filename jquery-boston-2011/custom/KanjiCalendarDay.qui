@@ -1,10 +1,10 @@
-<Control name="KanjiCalendarDay">
+<Control className="KanjiCalendarDay">
 
 <prototype>
     <CalendarDay>
-        <div id="dayContainer">
-            <div id="arabicNumber"/>
-            <CalligraphyNumber id="calligraphyNumber" class="vertical" />
+        <div ref="dayContainer">
+            <div ref="arabicNumber"/>
+            <CalligraphyNumber ref="calligraphyNumber" class="vertical" />
         </div>
     </CalendarDay>
 </prototype>

@@ -1,9 +1,9 @@
-<Control name="TextSlide">
+<Control className="TextSlide">
 
 <prototype>
     <Slide>
-        <h1 id="TextSlide_title"/>
-        <div id="TextSlide_content"/>
+        <h1 ref="TextSlide_title"/>
+        <div ref="TextSlide_content"/>
     </Slide>
 </prototype>
 

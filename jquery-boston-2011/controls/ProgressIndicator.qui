@@ -1,9 +1,9 @@
 <!-- A spinning progress indicator -->
 
-<Control name="ProgressIndicator">
+<Control className="ProgressIndicator">
 
 <content>
-    <img id="progressIndicator" src="resources/progressIndicator.gif"/>
+    <img ref="progressIndicator" src="resources/progressIndicator.gif"/>
 </content>
 
 <style>

@@ -1,9 +1,9 @@
 <!-- Dot buttons, inspired by Apple's -->
 
-<Control name="DotButton">
+<Control className="DotButton">
 
 <content>
-    <BasicButton id="button" generic="false"/>
+    <BasicButton ref="button" generic="false"/>
 </content>
 
 <style>

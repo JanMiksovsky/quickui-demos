@@ -1,4 +1,4 @@
-<Control name="Slide">
+<Control className="Slide">
 
 <style>
 {

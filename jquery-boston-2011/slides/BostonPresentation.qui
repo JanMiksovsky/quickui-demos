@@ -1,4 +1,4 @@
-<Control name="BostonPresentation">
+<Control className="BostonPresentation">
 
 <prototype>
     <Presentation generic="true">
@@ -61,7 +61,7 @@
         </SideBySideSlide>
         <CodeSlide sourceFile="flickr/FlickrMonthNavigator.qui"/>
         <CodeSlide sourceFile="flickr/ThaiFlickrMonthNavigator.qui"/>
-        <DeferredSlide controlClass="FlickrYear"/>
+        <DeferredSlide contentClass="FlickrYear"/>
             
         <TextSlide>
             <CodeColorizer sourceFile="slides/BostonPresentation.qui"/>

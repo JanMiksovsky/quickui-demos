@@ -1,12 +1,12 @@
-<Control name="CodeSlide">
+<Control className="CodeSlide">
 
 <prototype>
     <SideBySideSlide>
         <left>
-            <CodeColorizer id="CodeSlide_sourceCode"/>
+            <CodeColorizer ref="CodeSlide_sourceCode"/>
         </left>
         <right>
-            <div id="CodeSlide_demo"/>
+            <div ref="CodeSlide_demo"/>
         </right>
     </SideBySideSlide>
 </prototype>
@@ -26,7 +26,7 @@ CodeSlide.prototype.extend({
             var className = fileNameParts[0];
             var fileExtension = fileNameParts[1];
             if ( fileExtension === "qui" ) {
-                var classFn = Control._convertToClass( className );
+                var classFn = Control.getClass( className );
                 var control = classFn.create();
                 this
                     .title( className )

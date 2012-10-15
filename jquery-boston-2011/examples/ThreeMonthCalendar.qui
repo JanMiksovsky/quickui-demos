@@ -1,16 +1,16 @@
 <!-- Shows three consecutive months -->
 
-<Control name="ThreeMonthCalendar">
+<Control className="ThreeMonthCalendar">
 
 <content>
     <div>
-        <CalendarMonthWithHeadings id="month1"/>
+        <CalendarMonthWithHeadings ref="month1"/>
     </div>
     <div>
-        <CalendarMonthWithHeadings id="month2"/>
+        <CalendarMonthWithHeadings ref="month2"/>
     </div>
     <div>
-        <CalendarMonthWithHeadings id="month3"/>
+        <CalendarMonthWithHeadings ref="month3"/>
     </div>
 </content>
 

@@ -1,8 +1,8 @@
-<Control name="SideBySide">
+<Control className="SideBySide">
 
 <content>
-    <div id="SideBySide_left"/>
-    <div id="SideBySide_right"/>
+    <div ref="SideBySide_left"/>
+    <div ref="SideBySide_right"/>
 </content>
 
 <style>

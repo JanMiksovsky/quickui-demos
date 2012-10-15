@@ -1,7 +1,7 @@
-<Control name="LocalizedCalendars">
+<Control className="LocalizedCalendars">
 
 <content>
-    <SlidingTabs id="calendars">
+    <SlidingTabs ref="calendars">
         <MonthNavigator culture="en"/>
         <MonthNavigator culture="fr"/>
         <MonthNavigator culture="ar"/>

@@ -1,4 +1,4 @@
-<Control name="ThaiFlickrMonthNavigator">
+<Control className="ThaiFlickrMonthNavigator">
 
 <prototype>
     <FlickrMonthNavigator culture="th"/>

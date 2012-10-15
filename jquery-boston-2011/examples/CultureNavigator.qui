@@ -1,10 +1,10 @@
 <!-- Instantiates a given control in various cultures, for testing. -->
  
-<Control name="CultureNavigator">
+<Control className="CultureNavigator">
 
 <prototype>
     <LateralNavigator>
-        <MonthNavigator id="monthNavigator"/>
+        <MonthNavigator ref="monthNavigator"/>
     </LateralNavigator>
 </prototype>
 

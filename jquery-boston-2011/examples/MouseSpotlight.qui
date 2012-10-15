@@ -1,8 +1,8 @@
-<Control name="MouseSpotlight">
+<Control className="MouseSpotlight">
 
 <content>
-    <div id="MouseSpotlight_content"/>
-    <div id="spotlight"/>
+    <div ref="MouseSpotlight_content"/>
+    <div ref="spotlight"/>
 </content>
 
 <style>

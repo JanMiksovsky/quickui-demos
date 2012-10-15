@@ -1,6 +1,6 @@
 <!-- Repeat contents a specific number of times. -->
 
-<Control name="Repeater">
+<Control className="Repeater">
 
 <script>
 Repeater.prototype.extend({

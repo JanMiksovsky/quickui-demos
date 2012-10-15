@@ -1,4 +1,4 @@
-<Control name="CalligraphyNumber">
+<Control className="CalligraphyNumber">
 
 <prototype>
     <ImageMessage/>

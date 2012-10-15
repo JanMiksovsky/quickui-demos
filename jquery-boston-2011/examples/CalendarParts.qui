@@ -1,6 +1,6 @@
 <!-- Show all the parts in a DateComboBox -->
 
-<Control name="CalendarParts">
+<Control className="CalendarParts">
 
 <content>
 

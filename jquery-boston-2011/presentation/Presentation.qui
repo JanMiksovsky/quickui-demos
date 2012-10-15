@@ -2,18 +2,18 @@
 Simple PowerPoint-style presentation. 
 -->
 
-<Control name="Presentation">
+<Control className="Presentation">
 
 <prototype>
     <Page fill="true">
         <VerticalPanels fill="true">
             <content>
-                <Switch id="Presentation_content" tabindex="0" />
+                <Switch ref="Presentation_content" tabindex="0" />
             </content>
             <bottom>
-                <div id="toolbar">
-                    <BasicButton id="buttonPrevious">&#9664;</BasicButton>
-                    <BasicButton id="buttonNext">&#9654;</BasicButton>
+                <div ref="toolbar">
+                    <BasicButton ref="buttonPrevious">&#9664;</BasicButton>
+                    <BasicButton ref="buttonNext">&#9654;</BasicButton>
                 </div>
             </bottom>
         </VerticalPanels>
