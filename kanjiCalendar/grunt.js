@@ -19,14 +19,14 @@ module.exports = function(grunt) {
         coffee: {
             controls: {
                 src: sortDependencies.sortClassFiles( "controls/*.coffee" ),
-                dest: "controls/controls.js",
+                dest: "kanjiCalendar.js",
                 options: { bare: false }
             }
         },
         less: {
             controls: {
                 files: {
-                    "controls/controls.css": sortDependencies.sortClassFiles( "controls/*.less" ),
+                    "kanjiCalendar.css": sortDependencies.sortClassFiles( "controls/*.less" ),
                 }
             }
         }
