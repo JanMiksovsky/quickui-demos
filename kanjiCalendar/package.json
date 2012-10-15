@@ -1,0 +1,8 @@
+{
+    "name": "quickui-kanji-calendar",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt-contrib-less": "*",
+        "less": "*"
+    }
+}

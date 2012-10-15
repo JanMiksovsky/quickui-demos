@@ -1,0 +1,268 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Edit",
+				"EditableTextBox"
+			],
+			[
+				"Editabl",
+				"Editable_read"
+			],
+			[
+				"Editable",
+				"Editable_edit"
+			],
+			[
+				"Editab",
+				"Editable_read"
+			],
+			[
+				"Con",
+				"ContactInfo"
+			],
+			[
+				"Conta",
+				"ContactCard_address"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/QuickUI/qb.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Source/projects/boilerplate/index.html",
+		"/C/Source/projects/hello/heroku/index.html",
+		"/C/Source/projects/suckerpunch/grunt.js",
+		"/C/Source/projects/hello/canviz-0.1/examples/hello_world/index.html",
+		"/C/Source/projects/hello/canviz-0.1/canviz.js",
+		"/C/Source/projects/hello/canviz-0.1/new.html",
+		"/C/Source/projects/hello/canviz-0.1/index.html",
+		"/C/Source/projects/hello/canviz-0.1/examples/hello_world/new.html",
+		"/C/Source/projects/demojs/index.html",
+		"/C/Source/projects/tune/AudioTrack.js",
+		"/C/Source/projects/tune/index.html",
+		"/C/Source/projects/sandbox/index.html",
+		"/C/Source/projects/python/__main__.py",
+		"/C/Source/projects/doonesbury/doon.py",
+		"/C/Source/projects/controls/Editable.qui",
+		"/C/Source/projects/controls/EditableTextBox.qui",
+		"/C/Source/projects/coffee/contacts/controls/ContactListBox.coffee",
+		"/C/Source/projects/coffee/contacts/controls/ContactListBox.less",
+		"/C/Source/projects/coffee/contacts/controls/ContactCard.coffee",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfoEdit.coffee",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfo.coffee",
+		"/C/Source/projects/controls/build/Editable.js",
+		"/C/Source/projects/controls/build/TabStrip.js",
+		"/C/Source/projects/controls/TabStrip.qui",
+		"/C/Source/projects/controls/controls.js",
+		"/C/Source/projects/coffee/contacts/controls/ContactsPage.less",
+		"/C/Source/projects/coffee/contacts/controls/ContactsPage.coffee",
+		"/C/Source/projects/coffee/contacts/controls/Card.coffee",
+		"/C/Source/projects/coffee/contacts/controls/Card.less",
+		"/C/Source/projects/lib/jquery-1.7.js",
+		"/C/Source/projects/hello/CoffeeScript/hello.js",
+		"/C/Source/projects/hello/CoffeeScript/hello.css",
+		"/C/Source/projects/hello/CoffeeScript/index.html",
+		"/C/Source/projects/hello/CoffeeScript/hello.coffee",
+		"/C/Source/quickui-markup/deploy/mkdep.py",
+		"/C/Source/projects/coffee/contacts/index.html",
+		"/C/Source/projects/coffee/demo/controls/FriendList.coffee",
+		"/C/Source/projects/coffee/demo/controls/Tile.coffee",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfoRead.coffee",
+		"/C/Source/projects/coffee/contacts/controls/EmailAddress.coffee",
+		"/C/Source/projects/coffee/contacts/controls/FieldLauncher.coffee",
+		"/C/Source/projects/coffee/contacts/controls/PostalAddress.coffee",
+		"/C/Source/projects/coffee/contacts/controls/Toolbar.coffee",
+		"/C/Source/projects/complete/CoffeeScript Demo/FriendList.coffee",
+		"/C/Source/projects/complete/CoffeeScript Demo/Tile.coffee",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfoRead.less",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfo.less",
+		"/C/Source/projects/coffee/contacts/contacts.js",
+		"/C/Source/projects/coffee/contacts/controls/ContactInfoEdit.less",
+		"/C/Source/projects/coffee/contacts/grunt.js",
+		"/C/Source/projects/coffee/contacts/contacts.less",
+		"/C/Source/projects/coffee/contacts/controls/FieldLauncher.less",
+		"/C/Source/projects/coffee/contacts/controls/ContactCard.less",
+		"/C/Source/projects/coffee/contacts/controls/ContactCardEdit.coffee",
+		"/C/Source/projects/coffee/contacts/controls/FieldWithButton.coffee",
+		"/C/Source/projects/coffee/contacts/presenters/ContactsPresenter.coffee",
+		"/C/Source/projects/coffee/contacts/test/unittests.coffee",
+		"/C/Source/projects/coffee/contacts/models/Contact.coffee",
+		"/C/Source/projects/coffee/contacts/models/Contacts.coffee",
+		"/C/Source/projects/coffee/contacts/test/unittests.js",
+		"/C/Source/projects/coffee/contacts/test/unittests.html",
+		"/C/Source/projects/hello/CoffeeScript/grunt.js",
+		"/C/Source/projects/coffee/contacts/contacts.json",
+		"/C/Source/projects/coffee/contacts/general.less",
+		"/C/Source/projects/coffee/contacts/utilities.less",
+		"/C/Users/Jan/.profile",
+		"/C/Users/Jan/Desktop/openssh-6.0p1/INSTALL",
+		"/C/Users/Jan/.ssh/config",
+		"/C/Source/quickui/src/control.coffee"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"*.js",
+			"*.coffee",
+			"*.qui",
+			"*.coffee",
+			"*.coffeee",
+			"",
+			"C:\\Source\\projects\\coffee\\contacts",
+			"C:\\Source\\projects\\coffee\\contacts\\controls",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"parse",
+			"</audio>",
+			"<audio",
+			"genericDefault",
+			"init",
+			"Control.coffee()",
+			"FieldWithButton",
+			"ContactsPresenter",
+			"ContactPresenter",
+			"insert",
+			"console",
+			"maria",
+			"emanuel",
+			"connie",
+			"cleora",
+			"TextWithButton"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"</audio></li>",
+			"<li><audio",
+			"generic",
+			"FieldLauncher",
+			"FieldWithButton",
+			"TextWithButton"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Source/quickui-catalog.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true
+}
