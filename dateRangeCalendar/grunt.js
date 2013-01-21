@@ -9,16 +9,16 @@
 
 module.exports = function(grunt) {
 
-    grunt.loadTasks( "../../quickui/grunt" );
+    grunt.loadNpmTasks( "grunt-contrib-coffee" );
     grunt.loadNpmTasks( "grunt-contrib-less" );
 
-    var sortDependencies = require( "../../quickui/grunt/sortDependencies.js" );
+    var sortDependencies = require( "sort-dependencies" );
 
     // Project configuration.
     grunt.initConfig({
         coffee: {
             controls: {
-                src: sortDependencies.sortClassFiles( "controls/*.coffee" ),
+                src: sortDependencies.sortFiles( "controls/*.coffee" ),
                 dest: "dateRangeCalendar.js",
                 options: { bare: false }
             }
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         less: {
             controls: {
                 files: {
-                    "dateRangeCalendar.css": sortDependencies.sortClassFiles( "controls/*.less" ),
+                    "dateRangeCalendar.css": sortDependencies.sortFiles( "controls/*.less" ),
                 }
             }
         }

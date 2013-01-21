@@ -2,7 +2,8 @@
     "name": "quickui-date-range-calendar",
     "version": "0.0.1",
     "devDependencies": {
-        "grunt-contrib-less": "*",
-        "less": "*"
+        "grunt-contrib-coffee": "~0.3",
+        "grunt-contrib-less": "~0.3",
+        "sort-dependencies": "~0.1"
     }
 }

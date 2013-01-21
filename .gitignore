@@ -1,6 +1,4 @@
-.externalToolBuilders
-.project
-.sublime*
+*.sublime*
 build
 dateRangeCalendar/dateRangeCalendar.*
 jquery-boston-2011/jquery-boston-2011.*
