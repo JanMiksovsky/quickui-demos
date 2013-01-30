@@ -1,0 +1,12 @@
+.PhotoCanvas {
+    line-height: 0;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.PhotoCanvas .Photo {
+    border: 10px solid white;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+}

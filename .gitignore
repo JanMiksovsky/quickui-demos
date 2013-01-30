@@ -1,6 +1,6 @@
 *.sublime*
-build
 dateRangeCalendar/dateRangeCalendar.*
 jquery-boston-2011/jquery-boston-2011.*
 kanjiCalendar/kanjiCalendar.*
+MaxSquareDemo/MaxSquareDemo.*
 node_modules

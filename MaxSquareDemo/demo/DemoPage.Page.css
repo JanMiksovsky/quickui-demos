@@ -1,0 +1,11 @@
+.DemoPage {
+    overflow: hidden;
+}
+
+.DemoPage .photoCanvas {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
