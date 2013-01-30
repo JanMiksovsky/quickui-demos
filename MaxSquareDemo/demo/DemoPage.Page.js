@@ -4,7 +4,7 @@ var DemoPage = Page.sub({
 
     inherited: {
         content: [
-            { control: "PhotoCanvas", ref: "photoCanvas" }
+            { control: "MaxSquareGrid", ref: "photoGrid" }
         ],
         fill: true
     },
@@ -36,6 +36,7 @@ var DemoPage = Page.sub({
     },
 
     initialize: function() {
+        /*
         var apiKey = "c3685bc8d8cefcc1d25949e4c528cbb0";
         var method = "flickr.interestingness.getList";
         var self = this;
@@ -46,8 +47,14 @@ var DemoPage = Page.sub({
                     href: self.getFlickrImageHref( flickrPhoto )
                 };
             })
-            self.$photoCanvas().photos( photos );
+            self.$photoGrid().photos( photos );
         });
+        */
+        var photos = [];
+        for ( var i = 0; i < 12; i++ ) {
+            photos.push( FlickrInterestingPhoto.create() );
+        }
+        this.$photoGrid().content( photos );
     }
 
 });

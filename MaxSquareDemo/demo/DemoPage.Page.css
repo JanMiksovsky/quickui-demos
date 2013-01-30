@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 
-.DemoPage .photoCanvas {
+.DemoPage .photoGrid {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: 100%;
