@@ -30,7 +30,14 @@ var MaxSquareGrid = Control.sub({
 
     _refresh: function() {
         var $children = this.children();
-        var cellSize = maxSquare.optimalCellSize( this.width(), this.height(), $children.length );
+        // Leave a margin of unused space on the right. If the user is making
+        // the window narrower, a fast browser will reflow the content before
+        // the grid has a chance to refresh the cell size, producing significant
+        // flicker. By leaving a bit of room on the right, we give ourselves a
+        // chance to detect a grid resize and reduce the size of the cells
+        // before the browser can reflow the content.
+        var width = this.width() - 25;
+        var cellSize = maxSquare.optimalCellSize( width, this.height(), $children.length );
         $children.css( cellSize );
     }
 
